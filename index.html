@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matini Media Agency</title>
     <meta name="description" content="Matini Media Agency helps Syrian businesses grow online with websites, social media, and more. Founded by Musa Matini.">
     
@@ -11,7 +11,7 @@
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS v3 -->
@@ -19,21 +19,75 @@
 
     <!-- Custom CSS -->
     <style>
-        :root { --bg-color: #0A0A0A; --primary-text: #EAEAEA; --secondary-text: #A0A0A0; --border-color: #222222; }
+        :root { 
+            --bg-color: #0A0A0A; 
+            --primary-text: #EAEAEA; 
+            --secondary-text: #A0A0A0; 
+            --border-color: #222222; 
+        }
         html { font-size: 133%; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--primary-text); }
-        body.font-ar { font-family: 'Tajawal', sans-serif; }
-        h1, h2, h3, .font-heading { font-family: 'Sora', sans-serif; font-weight: 600; }
-        body.font-ar h1, body.font-ar h2, body.font-ar h3, body.font-ar .font-heading { font-family: 'Tajawal', sans-serif; font-weight: 700; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--primary-text); 
+        }
+        body.font-ar { 
+            font-family: 'Tajawal', sans-serif; 
+        }
+        h1, h2, h3, .font-heading { 
+            font-family: 'Sora', sans-serif; 
+            font-weight: 600; 
+        }
+        body.font-ar h1, 
+        body.font-ar h2, 
+        body.font-ar h3, 
+        body.font-ar .font-heading { 
+            font-family: 'Tajawal', sans-serif; 
+            font-weight: 700; 
+        }
 
-        #vanta-bg { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
-        #header.scrolled { background-color: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); border-bottom-width: 1px; border-color: var(--border-color); }
-        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--bg-color); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.75s ease, visibility 0.75s ease; }
-        #preloader.loaded { opacity: 0; visibility: hidden; }
-        .loader-logo { animation: pulse-subtle 2s infinite ease-in-out; }
-        @keyframes pulse-subtle { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 1; } }
+        #vanta-bg { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0; 
+            z-index: -1; 
+        }
+        #header.scrolled { 
+            background-color: rgba(10, 10, 10, 0.7); 
+            backdrop-filter: blur(12px); 
+            border-bottom-width: 1px; 
+            border-color: var(--border-color); 
+        }
+        #preloader { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: var(--bg-color); 
+            z-index: 9999; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            transition: opacity 0.75s ease, visibility 0.75s ease; 
+        }
+        #preloader.loaded { 
+            opacity: 0; 
+            visibility: hidden; 
+        }
+        .loader-logo { 
+            animation: pulse-subtle 2s infinite ease-in-out; 
+        }
+        @keyframes pulse-subtle { 
+            0%, 100% { transform: scale(1); opacity: 0.8; } 
+            50% { transform: scale(1.05); opacity: 1; } 
+        }
         
-        .animate-glow { animation: color-glow-cycle 8s infinite ease-in-out; }
+        .animate-glow { 
+            animation: color-glow-cycle 8s infinite ease-in-out; 
+        }
         @keyframes color-glow-cycle {
             0%   { color: #38BDF8; text-shadow: 0 0 15px rgba(56, 189, 248, 0.6); }
             33%  { color: #A78BFA; text-shadow: 0 0 15px rgba(167, 139, 250, 0.6); }
@@ -41,9 +95,58 @@
             100% { color: #38BDF8; text-shadow: 0 0 15px rgba(56, 189, 248, 0.6); }
         }
 
-        .nav-link-desktop { position: relative; padding-bottom: 4px; }
-        .nav-link-desktop::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--primary-text); transform: scaleX(0); transform-origin: bottom right; transition: transform 0.3s ease-out; }
-        .nav-link-desktop:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+        .nav-link-desktop { 
+            position: relative; 
+            padding-bottom: 4px; 
+        }
+        .nav-link-desktop::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 2px; 
+            background-color: var(--primary-text); 
+            transform: scaleX(0); 
+            transform-origin: bottom right; 
+            transition: transform 0.3s ease-out; 
+        }
+        .nav-link-desktop:hover::after { 
+            transform: scaleX(1); 
+            transform-origin: bottom left; 
+        }
+        
+        .nav-link-desktop:hover::after { 
+            transform: scaleX(1); 
+            transform-origin: bottom left; 
+        }
+
+        @media (min-width: 768px) {
+            /* For Firefox */
+            html {
+                scrollbar-width: thin;
+                scrollbar-color: #ffffff #111111;
+            }
+        
+            /* For Webkit Browsers (Chrome, Safari, Edge) */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+        
+            ::-webkit-scrollbar-track {
+                background: #111111;
+            }
+        
+            ::-webkit-scrollbar-thumb {
+                background-color: #ffffff;
+                border-radius: 20px;
+                border: 2px solid #111111;
+            }
+        
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #6a6a6a;
+            }
+        }
     </style>
     <!-- JS Libraries for background animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -52,13 +155,17 @@
 <body class="antialiased">
 
     <div id="vanta-bg"></div>
-    <div id="preloader"><img src="logo.png" alt="Agency Logo" class="w-24 h-24 object-cover loader-logo"></div>
+    <div id="preloader">
+        <img src="logo.png" alt="Agency Logo" class="w-24 h-24 object-cover loader-logo">
+    </div>
 
     <header class="fixed top: 0; left-0 w-full z-50 transition-all duration-300" id="header">
         <nav class="container max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="nav-link flex items-center gap-4">
                 <img src="logo.png" alt="Agency Logo" class="w-10 h-10 object-cover transition-transform duration-300 hover:scale-110">
-                <span class="font-heading text-lg hidden sm:block rtl:tracking-normal" data-translate="header_title">Matini Media Agency</span>
+                <span class="font-heading text-lg hidden sm:block rtl:tracking-normal" data-translate="header_title">
+                    Matini Media Agency
+                </span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider rtl:tracking-normal">
                 <a href="#agency" class="nav-link nav-link-desktop transition-colors" data-translate="nav_agency">Our Agency</a>
@@ -69,13 +176,21 @@
             </div>
             <div class="md:hidden flex items-center gap-4">
                 <button id="lang-switcher-mobile" class="font-bold text-lg" data-translate="lang_switcher">العربية</button>
-                <button id="mobile-menu-btn" class="z-[61]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg></button>
+                <button id="mobile-menu-btn" class="z-[61]">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 
     <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-[60] flex flex-col items-center justify-center">
-        <button id="mobile-menu-close-btn" class="absolute top-6 right-6 p-2"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        <button id="mobile-menu-close-btn" class="absolute top-6 right-6 p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
         <div class="flex flex-col items-center justify-center space-y-8 text-2xl uppercase tracking-widest rtl:tracking-normal">
             <a href="#agency" class="nav-link mobile-link hover:text-neutral-400 transition-colors" data-translate="nav_agency">Our Agency</a>
             <a href="#packages" class="nav-link mobile-link hover:text-neutral-400 transition-colors" data-translate="nav_packages">Services</a>
@@ -86,77 +201,369 @@
 
     <div class="relative z-10">
         <main>
-            <section id="home" class="pt-32 pb-24 md:h-screen md:pt-0 md:pb-0 md:flex md:items-center relative overflow-hidden"><div class="container max-w-6xl mx-auto px-6 text-center">
-                <!-- CHANGE 1: Adjusted hero text sizes for better responsiveness -->
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading uppercase tracking-tighter rtl:tracking-normal leading-tight md:leading-tight animate-fade-in-up font-black">
-                    <span data-translate="hero_title_l1">Your Business on</span><br>
-                    <span class="animate-glow" data-translate="hero_title_l2">The Internet.</span>
-                </h1>
-                <p class="max-w-2xl mx-auto mt-8 text-lg text-neutral-400 animate-fade-in-up-delay" data-translate="hero_subtitle">We help local businesses in Syria get noticed online. A strong website and active social media means more customers for you. Let's build it together.</p>
-                <div class="mt-10 animate-fade-in-up-delay">
-                    <a href="#contact" class="nav-link border border-white text-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300" data-translate="nav_contact">Let's Talk</a>
+            <section id="home" class="pt-32 pb-24 md:h-screen md:pt-0 md:pb-0 md:flex md:items-center relative overflow-hidden">
+                <div class="container max-w-6xl mx-auto px-6 text-center">
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading uppercase tracking-tighter rtl:tracking-normal leading-tight md:leading-tight animate-fade-in-up font-black">
+                        <span data-translate="hero_title_l1">Your Business on</span><br>
+                        <span class="animate-glow" data-translate="hero_title_l2">The Internet.</span>
+                    </h1>
+                    <p class="max-w-2xl mx-auto mt-8 text-lg text-neutral-400 animate-fade-in-up-delay" data-translate="hero_subtitle">
+                        We help local businesses in Syria get noticed online. A strong website and active social media means more customers for you. Let's build it together.
+                    </p>
+                    <div class="mt-10 animate-fade-in-up-delay">
+                        <a href="#contact" class="nav-link border border-white text-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300" data-translate="nav_contact">Let's Talk</a>
+                    </div>
                 </div>
-            </div></section>
+            </section>
             
-            <section id="agency" class="py-12 md:py-24 md:bg-neutral-900/50"><div class="container max-w-6xl mx-auto px-6 rtl:text-right"><div class="max-w-3xl mx-auto text-center reveal-fade"><p class="text-sm uppercase tracking-widest rtl:tracking-normal text-neutral-400 mb-2" data-translate="agency_tag">Our Mission</p><h2 class="text-4xl md:text-5xl font-heading" data-translate="agency_title">Your Digital Front Door.</h2><div class="mt-6 text-lg text-neutral-300 leading-relaxed space-y-4"><p data-translate="agency_p1">Today, your online presence is as important as your physical store. Many great Syrian businesses have excellent products and services but are invisible to customers searching online. We are here to change that.</p><p data-translate="agency_p2">Matini Media Agency is a local team that uses modern tools to build your online home. We don't just make things look good; we build a foundation for your business to attract new customers and grow stronger in the digital world.</p><p class="border-t border-neutral-700 pt-4 mt-4 text-neutral-400"><strong class="text-white" data-translate="halal_title">A Commitment to Halal Content.</strong><br><span data-translate="halal_desc">All content we create adheres to Halal principles. This means we focus on positive messaging, use vocals-only audio, and ensure our work is respectful and appropriate, without any musical instruments or Haram elements.</span></p></div></div></div></section>
-            
-            <section id="packages" class="py-16 md:py-32"><div class="container max-w-6xl mx-auto px-6"><div class="text-center mb-16 max-w-2xl mx-auto reveal-fade"><p class="text-sm uppercase tracking-widest rtl:tracking-normal text-neutral-400 mb-2" data-translate="packages_tag">Our Services</p><h2 class="text-4xl md:text-5xl font-heading" data-translate="packages_title">Build Your Presence.</h2></div><div class="mb-20"><h3 class="text-center text-2xl font-heading mb-10" data-translate="packages_subtitle1">One-Time Foundation Services</h3>
-                <!-- CHANGE 2: Adjusted grid columns to prevent price overflow -->
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                    <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col"><h4 class="font-heading text-xl" data-translate="pkg1_title">Dynamic Website</h4><p class="text-neutral-400 mt-2 flex-grow" data-translate="pkg1_desc">A full site with a management panel for you to update it.</p><p class="text-4xl font-heading mt-6"><span data-translate="pkg1_price_syp">400,000 SYP</span><span class="block text-sm text-neutral-500 font-normal" data-translate="pkg1_price_usd">($40 USD)</span></p></div>
-                    <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col"><h4 class="font-heading text-xl" data-translate="pkg2_title">Landing Page</h4><p class="text-neutral-400 mt-2 flex-grow" data-translate="pkg2_desc">A beautiful, single-page site to showcase your business.</p><p class="text-4xl font-heading mt-6"><span data-translate="pkg2_price_syp">300,000 SYP</span><span class="block text-sm text-neutral-500 font-normal" data-translate="pkg2_price_usd">($30 USD)</span></p></div>
-                    <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col"><h4 class="font-heading text-xl" data-translate="pkg3_title">Maps Listing + Photos</h4><p class="text-neutral-400 mt-2 flex-grow" data-translate="pkg3_desc">Registration on Google & Yandex Maps with photoshooting.</p><p class="text-4xl font-heading mt-6"><span data-translate="pkg3_price_syp">100,000 SYP</span><span class="block text-sm text-neutral-500 font-normal" data-translate="pkg3_price_usd">($10 USD)</span></p></div>
-                    <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col"><h4 class="font-heading text-xl" data-translate="pkg4_title">Social Media Setup</h4><p class="text-neutral-400 mt-2 flex-grow" data-translate="pkg4_desc">Creation of professional accounts on popular platforms.</p><p class="text-4xl font-heading mt-6"><span data-translate="pkg4_price_syp">50,000 SYP</span><span class="block text-sm text-neutral-500 font-normal" data-translate="pkg4_price_usd">($5 USD)</span></p></div>
-                </div>
-            </div><div class="pt-10"><h3 class="text-center text-2xl font-heading mb-10" data-translate="packages_subtitle2">Monthly Growth Partnership</h3><div class="bg-black/50 backdrop-blur-sm p-8 md:p-12 border border-neutral-800 reveal-card max-w-3xl mx-auto"><div class="text-center"><h4 class="font-heading text-2xl" data-translate="pkg5_title">Full Management</h4><p class="text-5xl font-heading mt-4"><span data-translate="pkg5_price_syp">400,000 SYP</span><span class="block text-lg text-neutral-400 font-normal" data-translate="pkg5_price_usd">($40 USD) / month</span></p></div><ul class="space-y-4 text-neutral-300 mt-8 text-lg"><li data-translate="pkg5_l1">✓ 1 Photoshoot every 2 weeks</li><li data-translate="pkg5_l2">✓ 1 Short Video every 5 days</li><li data-translate="pkg5_l3">✓ 1 Social Media Post every 3 days</li><li data-translate="pkg5_l4">✓ 16 Comments & Replies per month</li></ul></div></div></div></section>
-            
-            <section id="about" class="py-12 md:py-32 overflow-hidden md:bg-neutral-900/50"><div class="container max-w-6xl mx-auto px-6">
-                <!-- CHANGE 3: Changed md: to lg: so the layout stacks on tablets -->
-                <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
-                    <div class="lg:w-1/3 flex justify-center reveal-left"><img src="founder.jpg" alt="Musa Matini, Founder" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-lg"></div>
-                    <div class="lg:w-2/3 reveal-right rtl:text-right">
-                        <h2 class="text-4xl md:text-5xl font-heading mb-6" data-translate="about_title">Who is behind Matini Media Agency?</h2>
-                        <div class="space-y-4 text-neutral-300 leading-relaxed text-lg">
-                            <p data-translate="about_p1">I'm Musa Matini, a digital craftsman with a passion for building beautiful and effective online experiences. My work is a blend of clean code, modern design, and a real understanding of what makes people connect with a brand online.</p>
-                            <p data-translate="about_p2">I believe that a great online presence can change a business's future. For me, this is about collaboration. We're on the same level, working towards a shared goal: making your business thrive. I bring the digital expertise, you bring the passion for your craft. Together, we'll create something powerful.</p>
-                            <a href="https://musa.matini.site" target="_blank" class="text-white hover:underline" data-translate="about_personal_link">Learn more about my work &rarr;</a>
+            <section id="agency" class="py-12 md:py-24 md:bg-neutral-900/50">
+                <div class="container max-w-6xl mx-auto px-6 rtl:text-right">
+                    <div class="max-w-3xl mx-auto text-center reveal-fade">
+                        <p class="text-sm uppercase tracking-widest rtl:tracking-normal text-neutral-400 mb-2" data-translate="agency_tag">Our Mission</p>
+                        <h2 class="text-4xl md:text-5xl font-heading" data-translate="agency_title">Your Digital Front Door.</h2>
+                        <div class="mt-6 text-lg text-neutral-300 leading-relaxed space-y-4">
+                            <p data-translate="agency_p1">Today, your online presence is as important as your physical store. Many great Syrian businesses have excellent products and services but are invisible to customers searching online. We are here to change that.</p>
+                            <p data-translate="agency_p2">Matini Media Agency is a local team that uses modern tools to build your online home. We don't just make things look good; we build a foundation for your business to attract new customers and grow stronger in the digital world.</p>
+                            <p class="border-t border-neutral-700 pt-4 mt-4 text-neutral-400">
+                                <strong class="text-white" data-translate="halal_title">A Commitment to Halal Content.</strong><br>
+                                <span data-translate="halal_desc">All content we create adheres to Halal principles. This means we focus on positive messaging, use vocals-only audio, and ensure our work is respectful and appropriate, without any musical instruments or Haram elements.</span>
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div></section>
+            </section>
             
-            <section id="contact" class="md:h-screen md:flex md:items-center py-20 md:py-0"><div class="container max-w-6xl mx-auto px-6 text-center"><h2 class="text-5xl md:text-7xl font-heading uppercase tracking-tighter rtl:tracking-normal reveal-fade" data-translate="contact_title">Ready to Start?</h2><p class="text-lg text-neutral-400 max-w-xl mx-auto my-8 reveal-fade" data-translate="contact_subtitle">Let's talk about your business and how we can help it grow. Send an email or message me directly.</p><div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mt-10 reveal-fade"><a href="mailto:media@matini.link" class="text-xl md:text-2xl font-heading text-white hover:text-neutral-400 transition-colors">media@matini.link</a><span class="text-neutral-600 hidden md:block">|</span><a href="tel:+963213123123" class="text-xl md:text-2xl font-heading text-white hover:text-neutral-400 transition-colors"><span dir="ltr">+963 21 312 3123</span></a></div></div></section>
+            <section id="packages" class="py-16 md:py-32">
+                <div class="container max-w-6xl mx-auto px-6">
+                    <div class="text-center mb-16 max-w-2xl mx-auto reveal-fade">
+                        <p class="text-sm uppercase tracking-widest rtl:tracking-normal text-neutral-400 mb-2" data-translate="packages_tag">Our Services</p>
+                        <h2 class="text-4xl md:text-5xl font-heading" data-translate="packages_title">Build Your Presence.</h2>
+                    </div>
+                    <div class="mb-20">
+                        <h3 class="text-center text-2xl font-heading mb-10" data-translate="packages_subtitle1">One-Time Foundation Services</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                            <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col">
+                                <h4 class="font-heading text-xl" data-translate="pkg1_title">Dynamic Website</h4>
+                                <p class="text-neutral-400 mt-2 flex-grow" data-translate="pkg1_desc">A full site with a management panel for you to update it.</p>
+                                <p class="text-4xl font-heading mt-6"><span data-translate="pkg1_price_syp">400,000 SYP</span><span class="block text-sm text-neutral-500 font-normal" data-translate="pkg1_price_usd">($40 USD)</span></p>
+                            </div>
+                            <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col">
+                                <h4 class="font-heading text-xl" data-translate="pkg2_title">Landing Page</h4>
+                                <p class="text-neutral-400 mt-2 flex-grow" data-translate="pkg2_desc">A beautiful, single-page site to showcase your business.</p>
+                                <p class="text-4xl font-heading mt-6"><span data-translate="pkg2_price_syp">300,000 SYP</span><span class="block text-sm text-neutral-500 font-normal" data-translate="pkg2_price_usd">($30 USD)</span></p>
+                            </div>
+                            <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col">
+                                <h4 class="font-heading text-xl" data-translate="pkg3_title">Maps Listing + Photos</h4>
+                                <p class="text-neutral-400 mt-2 flex-grow" data-translate="pkg3_desc">Registration on Google & Yandex Maps with photoshooting.</p>
+                                <p class="text-4xl font-heading mt-6"><span data-translate="pkg3_price_syp">100,000 SYP</span><span class="block text-sm text-neutral-500 font-normal" data-translate="pkg3_price_usd">($10 USD)</span></p>
+                            </div>
+                            <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col">
+                                <h4 class="font-heading text-xl" data-translate="pkg4_title">Social Media Setup</h4>
+                                <p class="text-neutral-400 mt-2 flex-grow" data-translate="pkg4_desc">Creation of professional accounts on popular platforms.</p>
+                                <p class="text-4xl font-heading mt-6"><span data-translate="pkg4_price_syp">50,000 SYP</span><span class="block text-sm text-neutral-500 font-normal" data-translate="pkg4_price_usd">($5 USD)</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-10">
+                        <h3 class="text-center text-2xl font-heading mb-10" data-translate="packages_subtitle2">Monthly Growth Partnership</h3>
+                        <div class="bg-black/50 backdrop-blur-sm p-8 md:p-12 border border-neutral-800 reveal-card max-w-3xl mx-auto">
+                            <div class="text-center">
+                                <h4 class="font-heading text-2xl" data-translate="pkg5_title">Full Management</h4>
+                                <p class="text-5xl font-heading mt-4"><span data-translate="pkg5_price_syp">400,000 SYP</span><span class="block text-lg text-neutral-400 font-normal" data-translate="pkg5_price_usd">($40 USD) / month</span></p>
+                            </div>
+                            <ul class="space-y-4 text-neutral-300 mt-8 text-lg">
+                                <li data-translate="pkg5_l1">✓ 1 Photoshoot every 2 weeks</li>
+                                <li data-translate="pkg5_l2">✓ 1 Short Video every 5 days</li>
+                                <li data-translate="pkg5_l3">✓ 1 Social Media Post every 3 days</li>
+                                <li data-translate="pkg5_l4">✓ 16 Comments & Replies per month</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="about" class="py-12 md:py-32 overflow-hidden md:bg-neutral-900/50">
+                <div class="container max-w-6xl mx-auto px-6">
+                    <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
+                        <div class="lg:w-1/3 flex justify-center reveal-left">
+                            <img src="founder.jpg" alt="Musa Matini, Founder" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-lg">
+                        </div>
+                        <div class="lg:w-2/3 reveal-right rtl:text-right">
+                            <h2 class="text-4xl md:text-5xl font-heading mb-6" data-translate="about_title">Who is behind Matini Media Agency?</h2>
+                            <div class="space-y-4 text-neutral-300 leading-relaxed text-lg">
+                                <p data-translate="about_p1">I'm Musa Matini, a digital craftsman with a passion for building beautiful and effective online experiences. My work is a blend of clean code, modern design, and a real understanding of what makes people connect with a brand online.</p>
+                                <p data-translate="about_p2">I believe that a great online presence can change a business's future. For me, this is about collaboration. We're on the same level, working towards a shared goal: making your business thrive. I bring the digital expertise, you bring the passion for your craft. Together, we'll create something powerful.</p>
+                                <a href="https://musa.matini.site" target="_blank" class="text-white hover:underline" data-translate="about_personal_link">Learn more about my work &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contact" class="md:h-screen md:flex md:items-center py-20 md:py-0">
+                <div class="container max-w-6xl mx-auto px-6 text-center">
+                    <h2 class="text-5xl md:text-7xl font-heading uppercase tracking-tighter rtl:tracking-normal reveal-fade" data-translate="contact_title">Ready to Start?</h2>
+                    <p class="text-lg text-neutral-400 max-w-xl mx-auto my-8 reveal-fade" data-translate="contact_subtitle">Let's talk about your business and how we can help it grow. Send an email or message me directly.</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mt-10 reveal-fade">
+                        <a href="mailto:media@matini.link" class="text-xl md:text-2xl font-heading text-white hover:text-neutral-400 transition-colors">media@matini.link</a>
+                        <span class="text-neutral-600 hidden md:block">|</span>
+                        <a href="tel:+963213123123" class="text-xl md:text-2xl font-heading text-white hover:text-neutral-400 transition-colors"><span dir="ltr">+963 21 312 3123</span></a>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
+
+    <!-- START: WHATSAPP BUBBLE -->
+    <a href="https://wa.me/963213123123" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="fixed bottom-6 left-6 z-40 w-14 h-14 bg-black rounded-full p-2 shadow-lg
+            hover:scale-110 transition-transform duration-300">
+        <img src="https://whatsapp.socialintents.com/images/whatsapp.png" 
+            alt="Chat on WhatsApp" 
+            class="w-full h-full">
+    </a>
+    <!-- END: WHATSAPP BUBBLE -->
 
     <!-- MAIN JAVASCRIPT -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const translations = {en:{title:"Matini Media Agency - We Grow Your Business Online",header_title:"Matini Media Agency",lang_switcher:"العربية",nav_agency:"Our Agency",nav_packages:"Services",nav_founder:"About Me",nav_contact:"Let's Talk",hero_title_l1:"Your Business on",hero_title_l2:"The Internet.",hero_subtitle:"We help local businesses in Syria get noticed online. A strong website and active social media means more customers for you. Let's build it together.",agency_tag:"Our Mission",agency_title:"Your Digital Front Door.",agency_p1:"Today, your online presence is as important as your physical store. Many great Syrian businesses have excellent products and services but are invisible to customers searching online. We are here to change that.",agency_p2:"Matini Media Agency is a local team that uses modern tools to build your online home. We don't just make things look good; we build a foundation for your business to attract new customers and grow stronger in the digital world.",halal_title:"A Commitment to Halal Content.",halal_desc:"All content we create adheres to Halal principles. This means we focus on positive messaging, use vocals-only audio, and ensure our work is respectful and appropriate, without any musical instruments or Haram elements.",packages_tag:"Our Services",packages_title:"Build Your Presence.",packages_subtitle1:"One-Time Foundation Services",pkg1_title:"Dynamic Website",pkg1_desc:"A full site with a management panel for you to update it.",pkg1_price_syp:"400,000 SYP",pkg1_price_usd:"($40 USD)",pkg2_title:"Landing Page",pkg2_desc:"A beautiful, single-page site to showcase your business.",pkg2_price_syp:"300,000 SYP",pkg2_price_usd:"($30 USD)",pkg3_title:"Maps Listing + Photos",pkg3_desc:"Registration on Google & Yandex Maps with photoshooting.",pkg3_price_syp:"100,000 SYP",pkg3_price_usd:"($10 USD)",pkg4_title:"Social Media Setup",pkg4_desc:"Creation of professional accounts on popular platforms.",pkg4_price_syp:"50,000 SYP",pkg4_price_usd:"($5 USD)",packages_subtitle2:"Monthly Growth Partnership",pkg5_title:"Full Management",pkg5_price_syp:"400,000 SYP",pkg5_price_usd:"($40 USD) / month",pkg5_l1:"✓ 1 Photoshoot every 2 weeks",pkg5_l2:"✓ 1 Short Video every 5 days",pkg5_l3:"✓ 1 Social Media Post every 3 days",pkg5_l4:"✓ 16 Comments & Replies per month",about_title:"Who is behind Matini Media Agency?",about_p1:"I'm Musa Matini, a digital craftsman with a passion for building beautiful and effective online experiences. My work is a blend of clean code, modern design, and a real understanding of what makes people connect with a brand online.",about_p2:"I believe that a great online presence can change a business's future. For me, this is about collaboration. We're on the same level, working towards a shared goal: making your business thrive. I bring the digital expertise, you bring the passion for your craft. Together, we'll create something powerful.",about_personal_link:"Learn more about my work →",contact_title:"Ready to Start?",contact_subtitle:"Let's talk about your business and how we can help it grow. Send an email or message me directly."},ar:{title:"وكالة متيني الإعلامية - ننمي أعمالك على الإنترنت",header_title:"وكالة متيني الإعلامية",lang_switcher:"English",nav_agency:"عن وكالتنا",nav_packages:"خدماتنا",nav_founder:"عني",nav_contact:"تواصل معنا",hero_title_l1:"عملك على",hero_title_l2:"الإنترنت.",hero_subtitle:"نحن نساعد الشركات المحلية في سوريا على الظهور عبر الإنترنت. موقع قوي وحسابات تواصل اجتماعي نشطة تعني المزيد من الزبائن لك. لنبني ذلك معًا.",agency_tag:"مهمتنا",agency_title:"بابك الأمامي الرقمي.",agency_p1:"اليوم، وجودك على الإنترنت لا يقل أهمية عن متجرك الفعلي. العديد من الشركات السورية الرائعة لديها منتجات وخدمات ممتازة ولكنها غير مرئية للعملاء الذين يبحثون عبر الإنترنت. نحن هنا لتغيير ذلك.",agency_p2:"وكالة متيني الإعلامية هو فريق محلي يستخدم أدوات حديثة لبناء منزلك على الإنترنت. نحن لا نجعل الأشياء تبدو جيدة فحسب؛ بل نبني أساسًا لعملك لجذب عملاء جدد والنمو بقوة في العالم الرقمي.",halal_title:"التزام بالمحتوى الحلال.",halal_desc:"كل المحتوى الذي ننشئه يلتزم بالمبادئ الحلال. هذا يعني أننا نركز على الرسائل الإيجابية، ونستخدم الصوت البشري فقط، ونضمن أن عملنا محترم ومناسب، بدون أي آلات موسيقية أو عناصر محرمة.",packages_tag:"خدماتنا",packages_title:"ابنِ حضورك الرقمي.",packages_subtitle1:"خدمات تأسيس لمرة واحدة",pkg1_title:"موقع ديناميكي",pkg1_desc:"موقع كامل مع لوحة تحكم لتحديثه بنفسك.",pkg1_price_syp:"٤٠٠٬٠٠٠ ل.س",pkg1_price_usd:"(٤٠$ دولار)",pkg2_title:"موقع صفحة واحدة",pkg2_desc:"موقع بسيط وأنيق من صفحة واحدة لعرض عملك.",pkg2_price_syp:"٣٠٠٬٠٠٠ ل.س",pkg2_price_usd:"(٣٠$ دولار)",pkg3_title:"تسجيل في الخرائط + صور",pkg3_desc:"التسجيل في خرائط جوجل وياندكس مع جلسة تصوير.",pkg3_price_syp:"١٠٠٬٠٠٠ ل.س",pkg3_price_usd:"(١٠$ دولار)",pkg4_title:"تجهيز حسابات التواصل",pkg4_desc:"إنشاء حسابات احترافية على المنصات الشهيرة.",pkg4_price_syp:"٥٠٬٠٠٠ ل.س",pkg4_price_usd:"(٥$ دولار)",packages_subtitle2:"شراكة نمو شهرية",pkg5_title:"إدارة كاملة",pkg5_price_syp:"٤٠٠٬٠٠٠ ل.س",pkg5_price_usd:"(٤٠$ دولار) / شهرياً",pkg5_l1:"✓ جلسة تصوير كل أسبوعين",pkg5_l2:"✓ فيديو قصير واحد كل 5 أيام",pkg5_l3:"✓ منشور واحد كل 3 أيام",pkg5_l4:"✓ ١٦ تعليق ورد شهرياً",about_title:"من يقف خلف وكالة متيني الإعلامية؟",about_p1:"أنا موسى متيني، حرفي رقمي شغوف ببناء تجارب جميلة وفعالة على الإنترنت. عملي هو مزيج من الكود النظيف، التصميم الحديث، والفهم الحقيقي لما يجعل الناس يتفاعلون مع العلامة التجارية.",about_p2:"أؤمن أن الحضور القوي على الإنترنت يمكن أن يغير مستقبل أي عمل. بالنسبة لي، الأمر كله يتعلق بالتعاون. نحن على نفس المستوى، ونعمل نحو هدف مشترك: جعل عملك يزدهر. أنا أقدم الخبرة الرقمية، وأنت تقدم الشغف بحرفتك. معًا، سننشئ شيئًا قويًا.",about_personal_link:"اعرف المزيد عن أعمالي ←",contact_title:"جاهز للبدء؟",contact_subtitle:"لنتحدث عن عملك وكيف يمكننا مساعدته على النمو. أرسل بريدًا إلكترونيًا أو راسلني مباشرة."}};
+            const translations = {
+                en: {
+                    title: "Matini Media Agency - We Grow Your Business Online",
+                    header_title: "Matini Media Agency",
+                    lang_switcher: "العربية",
+                    nav_agency: "Our Agency",
+                    nav_packages: "Services",
+                    nav_founder: "About Me",
+                    nav_contact: "Let's Talk",
+                    hero_title_l1: "Your Business on",
+                    hero_title_l2: "The Internet.",
+                    hero_subtitle: "We help local businesses in Syria get noticed online. A strong website and active social media means more customers for you. Let's build it together.",
+                    agency_tag: "Our Mission",
+                    agency_title: "Your Digital Front Door.",
+                    agency_p1: "Today, your online presence is as important as your physical store. Many great Syrian businesses have excellent products and services but are invisible to customers searching online. We are here to change that.",
+                    agency_p2: "Matini Media Agency is a local team that uses modern tools to build your online home. We don't just make things look good; we build a foundation for your business to attract new customers and grow stronger in the digital world.",
+                    halal_title: "A Commitment to Halal Content.",
+                    halal_desc: "All content we create adheres to Halal principles. This means we focus on positive messaging, use vocals-only audio, and ensure our work is respectful and appropriate, without any musical instruments or Haram elements.",
+                    packages_tag: "Our Services",
+                    packages_title: "Build Your Presence.",
+                    packages_subtitle1: "One-Time Foundation Services",
+                    pkg1_title: "Dynamic Website",
+                    pkg1_desc: "A full site with a management panel for you to update it.",
+                    pkg1_price_syp: "400,000 SYP",
+                    pkg1_price_usd: "($40 USD)",
+                    pkg2_title: "Landing Page",
+                    pkg2_desc: "A beautiful, single-page site to showcase your business.",
+                    pkg2_price_syp: "300,000 SYP",
+                    pkg2_price_usd: "($30 USD)",
+                    pkg3_title: "Maps Listing + Photos",
+                    pkg3_desc: "Registration on Google & Yandex Maps with photoshooting.",
+                    pkg3_price_syp: "100,000 SYP",
+                    pkg3_price_usd: "($10 USD)",
+                    pkg4_title: "Social Media Setup",
+                    pkg4_desc: "Creation of professional accounts on popular platforms.",
+                    pkg4_price_syp: "50,000 SYP",
+                    pkg4_price_usd: "($5 USD)",
+                    packages_subtitle2: "Monthly Growth Partnership",
+                    pkg5_title: "Full Management",
+                    pkg5_price_syp: "400,000 SYP",
+                    pkg5_price_usd: "($40 USD) / month",
+                    pkg5_l1: "✓ 1 Photoshoot every 2 weeks",
+                    pkg5_l2: "✓ 1 Short Video every 5 days",
+                    pkg5_l3: "✓ 1 Social Media Post every 3 days",
+                    pkg5_l4: "✓ 16 Comments & Replies per month",
+                    about_title: "Who is behind Matini Media Agency?",
+                    about_p1: "I'm Musa Matini, a digital craftsman with a passion for building beautiful and effective online experiences. My work is a blend of clean code, modern design, and a real understanding of what makes people connect with a brand online.",
+                    about_p2: "I believe that a great online presence can change a business's future. For me, this is about collaboration. We're on the same level, working towards a shared goal: making your business thrive. I bring the digital expertise, you bring the passion for your craft. Together, we'll create something powerful.",
+                    about_personal_link: "Learn more about my work →",
+                    contact_title: "Ready to Start?",
+                    contact_subtitle: "Let's talk about your business and how we can help it grow. Send an email or message me directly.",
+                },
+                ar: {
+                    title: "وكالة متيني للإعلام - خَلّي محلك يظهر عالإنترنت",
+                    header_title: "وكالة متيني للإعلام",
+                    lang_switcher: "English",
+                    nav_agency: "وكالتنا",
+                    nav_packages: "خدماتنا",
+                    nav_founder: "عنّي",
+                    nav_contact: "احكي معنا",
+                    hero_title_l1: "محلّك على",
+                    hero_title_l2: "عالإنترنت.",
+                    hero_subtitle: "منساعد المحلات والشركات بسوريا ليظهروا عالإنترنت. موقع قوي وسوشال ميديا نشطة يعني زباين أكتر إلك. خلينا نبلّش سوا.",
+                    agency_tag: "مهمتنا",
+                    agency_title: "واجهتك الرقمية.",
+                    agency_p1: "اليوم، وجودك أونلاين صار بنفس أهمية محلك عالأرض. كتير من البزنسات السورية عندها منتجات وخدمات ممتازة، بس ما حدا شايفها عالإنترنت. نحنا هون لنغيّر هالشي.",
+                    agency_p2: "وكالة متيني للإعلام فريق محلي بيستخدم أدوات حديثة ليبني بيتك الرقمي. ما منعمل بس شكل حلو، منعمل أساس متين يجذب زباين جداد ويقوي محلك بالعالم الرقمي.",
+                    halal_title: "التزامنا بالمحتوى الحلال.",
+                    halal_desc: "كل شي منعمله ملتزم بالمبادئ الشرعية. يعني تركيزنا عالرسائل الإيجابية، الصوت بدون موسيقى (أناشيد أو صوتيات)، وشغلنا كله محترم وخالي من أي شي حرام.",
+                    packages_tag: "خدماتنا",
+                    packages_title: "خلّي محلك يظهر.",
+                    packages_subtitle1: "خدمات لمرة وحدة",
+                    pkg1_title: "موقع ديناميكي",
+                    pkg1_desc: "موقع كامل مع لوحة تحكم لتقدر تعدل عليه بنفسك.",
+                    pkg1_price_syp: "400,000 ل.س",
+                    pkg1_price_usd: "(40 دولار)",
+                    pkg2_title: "صفحة هبوط",
+                    pkg2_desc: "صفحة واحدة مرتبة لتعرض محلك.",
+                    pkg2_price_syp: "300,000 ل.س",
+                    pkg2_price_usd: "(30 دولار)",
+                    pkg3_title: "إضافة عالخرائط + تصوير",
+                    pkg3_desc: "تسجيل عـ Google & Yandex Maps مع تصوير.",
+                    pkg3_price_syp: "100,000 ل.س",
+                    pkg3_price_usd: "(10 دولار)",
+                    pkg4_title: "إعداد سوشال ميديا",
+                    pkg4_desc: "إنشاء حسابات احترافية على المنصات المشهورة.",
+                    pkg4_price_syp: "50,000 ل.س",
+                    pkg4_price_usd: "(5 دولار)",
+                    packages_subtitle2: "شراكة نمو شهرية",
+                    pkg5_title: "إدارة سوشال ميديا كاملة",
+                    pkg5_price_syp: "400,000 ل.س",
+                    pkg5_price_usd: "(40 دولار) / بالشهر",
+                    pkg5_l1: "✓ تصوير كل أسبوعين",
+                    pkg5_l2: "✓ فيديو قصير كل 5 أيام",
+                    pkg5_l3: "✓ منشور سوشال ميديا كل 3 أيام",
+                    pkg5_l4: "✓ 16 رد وتعليق بالشهر",
+                    about_title: "مين ورا وكالة متيني للإعلام؟",
+                    about_p1: "أنا موسى متيني، صانع رقمي بحب ابني تجارب أونلاين حلوة وفعّالة. شغلي مزيج من كود نظيف، تصميم عصري، وفهم حقيقي لكيف الناس بتتفاعل مع البراندات عالإنترنت.",
+                    about_p2: "بآمن إنو وجود قوي أونلاين ممكن يغيّر مستقبل أي بزنس. بالنسبة إلي، الموضوع تعاون. نحنا على نفس المستوى وعم نشتغل لهدف مشترك: نخلّي محلك يكبر. أنا بجيب الخبرة الرقمية، وإنت بتجيب شغفك بشغلك. سوا منعمل شي قوي.",
+                    about_personal_link: "شوف شغلي أكتر →",
+                    contact_title: "جاهز تبلّش؟",
+                    contact_subtitle: "خلينا نحكي عن محلك وكيف فينا نساعده يكبر. بعت إيميل أو احكي معي دغري.",
+                }
+            };
+            
             let currentLang = 'en';
             const desktopLangSwitcher = document.getElementById('lang-switcher-desktop');
             const mobileLangSwitcher = document.getElementById('lang-switcher-mobile');
-            const setLanguage = (lang) => { document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'; document.body.className = lang === 'ar' ? 'font-ar' : ''; document.querySelectorAll('[data-translate]').forEach(el => { const key = el.getAttribute('data-translate'); el.textContent = translations[lang][key] || key; }); document.title = translations[lang].title; currentLang = lang; };
-            const handleLangSwitch = () => { const newLang = currentLang === 'en' ? 'ar' : 'en'; const currentUrl = new URL(window.location); currentUrl.searchParams.set('lang', newLang); history.pushState({}, '', currentUrl); setLanguage(newLang); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+            
+            const setLanguage = (lang) => {
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                document.body.className = lang === 'ar' ? 'font-ar' : '';
+                document.querySelectorAll('[data-translate]').forEach(el => {
+                    const key = el.getAttribute('data-translate');
+                    el.textContent = translations[lang][key] || key;
+                });
+                document.title = translations[lang].title;
+                currentLang = lang;
+            };
+            
+            const handleLangSwitch = () => {
+                const newLang = currentLang === 'en' ? 'ar' : 'en';
+                const currentUrl = new URL(window.location);
+                currentUrl.searchParams.set('lang', newLang);
+                history.pushState({}, '', currentUrl);
+                setLanguage(newLang);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+            
             desktopLangSwitcher.addEventListener('click', handleLangSwitch);
             mobileLangSwitcher.addEventListener('click', handleLangSwitch);
+            
             const urlParams = new URLSearchParams(window.location.search);
             const initialLang = urlParams.get('lang') === 'ar' ? 'ar' : 'en';
             setLanguage(initialLang);
-            window.addEventListener('load', () => { document.getElementById('preloader').classList.add('loaded'); });
+            
+            window.addEventListener('load', () => {
+                document.getElementById('preloader').classList.add('loaded');
+            });
+
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
-            let isMenuOpen = false; 
-            const toggleMenu = () => { isMenuOpen = !isMenuOpen; if (isMenuOpen) { mobileMenu.classList.remove('hidden'); setTimeout(() => mobileMenu.style.opacity = '1', 10); } else { mobileMenu.style.opacity = '0'; setTimeout(() => mobileMenu.classList.add('hidden'), 300); } }; 
+            let isMenuOpen = false;
+            
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    setTimeout(() => mobileMenu.style.opacity = '1', 10);
+                } else {
+                    mobileMenu.style.opacity = '0';
+                    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                }
+            };
+            
             mobileMenuBtn.addEventListener('click', toggleMenu);
             mobileMenuCloseBtn.addEventListener('click', toggleMenu);
-            window.addEventListener('scroll', () => { document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50); });
-            const sr = ScrollReveal({ distance: '50px', duration: 1200, easing: 'cubic-bezier(0.5, 0, 0, 1)', reset: false, viewFactor: 0.2 }); sr.reveal('.reveal-fade', { origin: 'bottom', interval: 100 }); sr.reveal('.reveal-left', { origin: 'left' }); sr.reveal('.reveal-right', { origin: 'right' }); sr.reveal('.reveal-card', { origin: 'bottom', interval: 150 });
-            const styleSheet = document.createElement("style"); styleSheet.type = "text/css"; styleSheet.innerText = `@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } } .animate-fade-in-up { animation: fadeInUp 1.2s cubic-bezier(0.2, 1, 0.2, 1) forwards; } .animate-fade-in-up-delay { animation: fadeInUp 1.2s cubic-bezier(0.2, 1, 0.2, 1) 0.2s forwards; opacity: 0; }`; document.head.appendChild(styleSheet);
-            document.querySelectorAll('.nav-link').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); if(isMenuOpen) toggleMenu(); const targetId = this.getAttribute('href'); const targetElement = document.querySelector(targetId); if (targetElement) { if (targetId === '#home') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; } const headerOffset = document.getElementById('header').offsetHeight; const elementPosition = targetElement.getBoundingClientRect().top; const elementHeight = targetElement.offsetHeight; const viewportHeight = window.innerHeight; let offsetPosition; if (elementHeight < viewportHeight - headerOffset) { offsetPosition = elementPosition + window.pageYOffset - (viewportHeight / 2) + (elementHeight / 2); } else { offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20; } window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); } }); });
-            VANTA.FOG({ el: "#vanta-bg", mouseControls: false, touchControls: false, gyroControls: false, minHeight: 200.00, minWidth: 200.00, highlightColor: 0x2a2a2a, midtoneColor: 0x1e1e1e, lowlightColor: 0x3c3c3c, baseColor: 0x0, blurFactor: 0.50, speed: 0.50, zoom: 0.40 });
+            
+            window.addEventListener('scroll', () => {
+                document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+            });
+            
+            const sr = ScrollReveal({
+                distance: '50px',
+                duration: 1200,
+                easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                reset: false,
+                viewFactor: 0.2
+            });
+            sr.reveal('.reveal-fade', { origin: 'bottom', interval: 100 });
+            sr.reveal('.reveal-left', { origin: 'left' });
+            sr.reveal('.reveal-right', { origin: 'right' });
+            sr.reveal('.reveal-card', { origin: 'bottom', interval: 150 });
+            
+            const styleSheet = document.createElement("style");
+            styleSheet.type = "text/css";
+            styleSheet.innerText = `
+                @keyframes fadeInUp { 
+                    0% { opacity: 0; transform: translateY(40px); } 
+                    100% { opacity: 1; transform: translateY(0); } 
+                } 
+                .animate-fade-in-up { 
+                    animation: fadeInUp 1.2s cubic-bezier(0.2, 1, 0.2, 1) forwards; 
+                } 
+                .animate-fade-in-up-delay { 
+                    animation: fadeInUp 1.2s cubic-bezier(0.2, 1, 0.2, 1) 0.2s forwards; opacity: 0; 
+                }`;
+            document.head.appendChild(styleSheet);
+            
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (isMenuOpen) toggleMenu();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        if (targetId === '#home') {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return;
+                        }
+                        const headerOffset = document.getElementById('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const elementHeight = targetElement.offsetHeight;
+                        const viewportHeight = window.innerHeight;
+                        let offsetPosition;
+                        if (elementHeight < viewportHeight - headerOffset) {
+                            offsetPosition = elementPosition + window.pageYOffset - (viewportHeight / 2) + (elementHeight / 2);
+                        } else {
+                            offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20;
+                        }
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            VANTA.FOG({
+                el: "#vanta-bg",
+                mouseControls: false,
+                touchControls: false,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                highlightColor: 0x2a2a2a,
+                midtoneColor: 0x1e1e1e,
+                lowlightColor: 0x3c3c3c,
+                baseColor: 0x0,
+                blurFactor: 0.50,
+                speed: 0.50,
+                zoom: 0.40
+            });
         });
     </script>
 </body>
