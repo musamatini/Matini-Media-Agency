@@ -120,31 +120,32 @@
             transform: scaleX(1); 
             transform-origin: bottom left; 
         }
-
+        /* ===== MODERN SCROLLBAR (DESKTOP ONLY) ===== */
         @media (min-width: 768px) {
             /* For Firefox */
             html {
                 scrollbar-width: thin;
-                scrollbar-color: #ffffff #111111;
+                /* thumb color, track color */
+                scrollbar-color: #ffffff #111111; 
             }
-        
+
             /* For Webkit Browsers (Chrome, Safari, Edge) */
             ::-webkit-scrollbar {
                 width: 10px;
             }
-        
+
             ::-webkit-scrollbar-track {
-                background: #111111;
+                background: #111111; /* Dark track background */
             }
-        
+
             ::-webkit-scrollbar-thumb {
-                background-color: #ffffff;
+                background-color: #ffffff; /* Pure white thumb */
                 border-radius: 20px;
-                border: 2px solid #111111;
+                border: 2px solid #111111; /* Padding effect */
             }
-        
+
             ::-webkit-scrollbar-thumb:hover {
-                background-color: #6a6a6a;
+                background-color: #ffffff; /* Stays pure white on hover */
             }
         }
     </style>
