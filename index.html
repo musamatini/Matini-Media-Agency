@@ -102,10 +102,22 @@
         .loader-logo {
             animation: pulse-subtle 2s infinite ease-in-out;
         }
-        #lang-switcher-desktop, 
+
+        #lang-switcher-desktop,
         #lang-switcher-mobile {
+            letter-spacing: normal;
+        }
+
+        body:not(.font-ar) #lang-switcher-desktop,
+        body:not(.font-ar) #lang-switcher-mobile {
             font-family: 'Changa', sans-serif;
         }
+
+        body.font-ar #lang-switcher-desktop,
+        body.font-ar #lang-switcher-mobile {
+            font-family: 'Inter', sans-serif;
+        }
+
         @keyframes pulse-subtle {
             0%, 100% { transform: scale(1); opacity: 0.8; }
             50% { transform: scale(1.05); opacity: 1; }
