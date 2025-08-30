@@ -31,8 +31,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500&family=Changa:wght@400;700&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS v3 -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -47,11 +47,18 @@
         html { font-size: 133%; }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
+            background-color: var(--bg-color); /* Fallback color if image doesn't load */
             color: var(--primary-text);
+            
+            /* === YOUR NEW STATIC BACKGROUND IMAGE === */
+            background-image: url('background.jpg'); /* <-- !!! CHANGE THIS PATH !!! */
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
         body.font-ar {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Changa', sans-serif;
         }
         h1, h2, h3, .font-heading {
             font-family: 'Sora', sans-serif;
@@ -61,7 +68,7 @@
         body.font-ar h2,
         body.font-ar h3,
         body.font-ar .font-heading {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Changa', sans-serif;
             font-weight: 700;
         }
         #vanta-bg {
@@ -159,7 +166,7 @@
             width: clamp(16rem, 10rem + 15vw, 20rem);
             height: clamp(16rem, 10rem + 15vw, 20rem);
         }
-        .font-ar-code { font-family: 'Tajawal', sans-serif; }
+        .font-ar-code { font-family: 'Changa', sans-serif; }
         @media (min-width: 1024px) {
             html {
                scrollbar-width: thin;
@@ -198,13 +205,9 @@
     }
     </script>
 
-    <!-- JS Libraries for background animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
 </head>
 <body class="antialiased">
     
-    <div id="vanta-bg"></div>
 
     <div id="preloader">
         <img src="logo.png" alt="Matini Media Agency Preloader Logo" class="w-24 h-24 object-cover loader-logo">
@@ -265,7 +268,6 @@
                     </div>
                 </div>
 
-                <!-- === MODIFIED ELEMENT: DARK MODE SOCIAL MEDIA CARD === -->
                 <div class="hidden lg:block absolute top-0 right-0 bg-neutral-900 text-neutral-100 border border-neutral-800 rounded-lg shadow-2xl opacity-0 animate-fly-in-tr pointer-events-none z-0 w-clamp-md p-clamp">
                     <div class="flex items-center gap-2 mb-2">
                         <div class="w-8 h-8 rounded-full bg-neutral-800"></div>
@@ -278,7 +280,6 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                     </div>
                 </div>
-                <!-- === END MODIFIED ELEMENT === -->
 
                 <div class="hidden lg:block absolute bottom-0 left-0 h-auto bg-[#111] border border-neutral-800 shadow-2xl rounded-lg opacity-0 animate-fly-in-bl pointer-events-none z-0 w-clamp-md p-clamp">
                     <p class="text-clamp-sm text-neutral-400" data-translate="hero_corner_bl_title"></p>
@@ -303,11 +304,9 @@
                         <a href="#contact" class="nav-link border border-white text-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300" data-translate="nav_contact"></a>
                     </div>
                 </div>
-
             </section>
             
-            <!-- MODIFIED: Adjusted padding for better mobile spacing -->
-            <section id="agency" class="py-16 md:py-24 md:bg-neutral-900/50">
+            <section id="agency" class="py-12 md:py-24 md:bg-neutral-900/50">
                 <div class="container max-w-6xl mx-auto px-6 rtl:text-right">
                     <div class="max-w-3xl mx-auto text-center reveal-fade">
                         <p class="text-sm uppercase tracking-widest rtl:tracking-normal text-neutral-400 mb-2" data-translate="agency_tag"></p>
@@ -324,14 +323,13 @@
                 </div>
             </section>
             
-            <section id="packages" class="py-16 md:py-32">
+            <section id="packages" class="py-12 md:py-32">
                 <div class="container max-w-6xl mx-auto px-6">
-                    <div class="text-center mb-16 max-w-2xl mx-auto reveal-fade">
+                    <div class="text-center mb-5 max-w-2xl mx-auto reveal-fade">
                         <p class="text-sm uppercase tracking-widest rtl:tracking-normal text-neutral-400 mb-2" data-translate="packages_tag"></p>
                         <h2 class="text-4xl md:text-5xl font-heading" data-translate="packages_title"></h2>
                     </div>
                     <div class="mb-20">
-                        <!-- MODIFIED: Added animation to subtitle -->
                         <h3 class="text-center text-2xl font-heading mb-10 reveal-fade" data-translate="packages_subtitle1"></h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-6xl mx-auto">
                             <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col">
@@ -357,7 +355,6 @@
                         </div>
                     </div>
                     <div class="pt-10">
-                        <!-- MODIFIED: Added animation to subtitle -->
                         <h3 class="text-center text-2xl font-heading mb-10 reveal-fade" data-translate="packages_subtitle2"></h3>
                         <div class="bg-black/50 backdrop-blur-sm p-8 md:p-12 border border-neutral-800 reveal-card max-w-3xl mx-auto">
                             <div class="text-center">
@@ -375,27 +372,43 @@
                 </div>
             </section>
             
-            <!-- MODIFIED: Adjusted padding for better mobile spacing -->
-            <section id="about" class="py-16 md:py-32 overflow-hidden md:bg-neutral-900/50">
+            <section id="about" class="py-12 md:py-32 md:bg-neutral-900/50">
                 <div class="container max-w-6xl mx-auto px-6">
-                    <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
-                        <div class="lg:w-1/3 flex justify-center reveal-left">
-                            <img src="founder.jpg" alt="Musa Matini, Founder of Matini Media Agency" class="object-cover rounded-3xl shadow-lg size-clamp-founder">
+                    <div class="text-center mb-16 max-w-2xl mx-auto reveal-fade">
+                        <p class="text-sm uppercase tracking-widest rtl:tracking-normal text-neutral-400 mb-2" data-translate="about_tag"></p>
+                        <h2 class="text-4xl md:text-5xl font-heading" data-translate="about_title"></h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col items-center">
+                            <img src="founder.jpg" alt="Musa Matini, Founder" class="w-32 h-32 rounded-full object-cover mb-4 border-2 border-neutral-700">
+                            <h3 class="font-heading text-xl" data-translate="founder_name"></h3>
+                            <p class="text-neutral-400 text-sm mb-4" data-translate="founder_title"></p>
+                            <p class="text-neutral-300 flex-grow" data-translate="founder_desc"></p>
+                            <a href="https://musa.matini.link" target="_blank" rel="noopener noreferrer" class="mt-6 text-sm font-semibold text-white hover:underline" data-translate="founder_link"></a>
                         </div>
-                        <div class="lg:w-2/3 reveal-right rtl:text-right">
-                            <h2 class="text-4xl md:text-5xl font-heading mb-6" data-translate="about_title"></h2>
-                            <div class="space-y-4 text-neutral-300 leading-relaxed text-lg">
-                                <p data-translate="about_p1"></p>
-                                <p data-translate="about_p2"></p>
-                                <p data-translate="about_p3"></p>
-                                <a href="https://musa.matini.link" target="_blank" class="text-white hover:underline" data-translate="about_personal_link"></a>
-                            </div>
+            
+                        <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col items-center">
+                            <img src="etherlight.png" alt="Musa Matini, Founder" class="w-32 h-32 rounded-full object-cover mb-4 border-2 border-neutral-700">
+                            <h3 class="font-heading text-xl" data-translate="partner_name"></h3>
+                            <p class="text-neutral-400 text-sm mb-4" data-translate="partner_title"></p>
+                            <p class="text-neutral-300 flex-grow" data-translate="partner_desc"></p>
+                            <a href="https://etherlight.link" target="_blank" rel="noopener noreferrer" class="mt-6 text-sm font-semibold text-white hover:underline" data-translate="partner_link"></a>
+                        </div>
+            
+                        <div class="bg-black/50 backdrop-blur-sm p-8 border border-neutral-800 reveal-card text-center flex flex-col items-center">
+                             <img src="ibrahim.png" alt="Ibrahim Matini, Graphics Designer" class="w-32 h-32 rounded-full object-cover mb-4 border-2 border-neutral-700">
+                            <h3 class="font-heading text-xl" data-translate="designer_name"></h3>
+                            <p class="text-neutral-400 text-sm mb-4" data-translate="designer_title"></p>
+                            <p class="text-neutral-300 flex-grow" data-translate="designer_desc"></p>
+                            <a href="https://ibrahim.matini.link/" target="_blank" rel="noopener noreferrer" class="mt-6 text-sm font-semibold text-white hover:underline" data-translate="designer_link"></a>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <section id="contact" class="md:h-screen md:flex md:items-center py-20 md:py-0">
+                
+            <section id="contact" class="md:h-screen md:flex md:items-center pt-12 pb-24 md:py-0">
                 <div class="container max-w-6xl mx-auto px-6 text-center">
                     <h2 class="text-5xl md:text-7xl font-heading uppercase tracking-tighter rtl:tracking-normal reveal-fade" data-translate="contact_title"></h2>
                     <p class="text-lg text-neutral-400 max-w-xl mx-auto my-8 reveal-fade" data-translate="contact_subtitle"></p>
@@ -404,30 +417,12 @@
                         <span class="text-neutral-600 hidden md:block">|</span>
                         <a href="tel:+963993610435" class="text-xl md:text-2xl font-heading text-white hover:text-neutral-400 transition-colors"><span dir="ltr">+963 993 610 435</span></a>
                     </div>
-                                        <!-- SOCIAL MEDIA ICONS START -->
-                    <div class="flex items-center justify-center gap-8 mt-4 reveal-fade">
-                        <a href="https://x.com/MatiniMedia" target="_blank" rel="noopener noreferrer" class="text-white hover:text-neutral-400 transition-colors duration-300" aria-label="Follow us on X">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/matinimedia/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-neutral-400 transition-colors duration-300" aria-label="Follow us on Instagram">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.316 1.363.364 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.316-2.427.364-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.316-1.363-.364-2.427C2.013 16.318 2 15.978 2 12.315v-.08c0-2.643.012-2.987.06-4.043.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.316 2.427-.364C8.901 2.013 9.24 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                        <a href="https://www.youtube.com/@MatiniMedia" target="_blank" rel="noopener noreferrer" class="text-white hover:text-neutral-400 transition-colors duration-300" aria-label="Subscribe on YouTube">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 15.194V8.806L15.194 12Z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                        <a href="https://www.facebook.com/people/%D9%88%D9%83%D8%A7%D9%84%D8%A9-%D9%85%D8%AA%D9%8A%D9%86%D9%8A-%D9%84%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A/61580010747869/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-neutral-400 transition-colors duration-300" aria-label="Follow us on Facebook">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
+                    <div class="flex items-center justify-center gap-8 mt-6 reveal-fade">
+                        <a href="https://x.com/MatiniMedia" target="_blank" rel="noopener noreferrer" class="text-white hover:text-neutral-400 transition-colors duration-300" aria-label="Follow us on X"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                        <a href="https://www.instagram.com/matinimedia/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-neutral-400 transition-colors duration-300" aria-label="Follow us on Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.316 1.363.364 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.316-2.427.364-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.316-1.363-.364-2.427C2.013 16.318 2 15.978 2 12.315v-.08c0-2.643.012-2.987.06-4.043.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.316 2.427-.364C8.901 2.013 9.24 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" clip-rule="evenodd" /></svg></a>
+                        <a href="https://www.youtube.com/@MatiniMedia" target="_blank" rel="noopener noreferrer" class="text-white hover:text-neutral-400 transition-colors duration-300" aria-label="Subscribe on YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 15.194V8.806L15.194 12Z" clip-rule="evenodd" /></svg></a>
+                        <a href="https://www.facebook.com/people/%D9%88%D9%83%D8%A7%D9%84%D8%A9-%D9%85%D8%AA%D9%8A%D9%86%D9%8A-%D9%84%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A/61580010747869/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-neutral-400 transition-colors duration-300" aria-label="Follow us on Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z" clip-rule="evenodd" /></svg></a>
                     </div>
-                    <!-- SOCIAL MEDIA ICONS END -->
                 </div>
             </section>
         </main>
@@ -443,7 +438,7 @@
                 "header_title": "Matini Media Agency",
                 "lang_switcher": "العربية",
                 "nav_agency": "Our Agency",
-                "nav_packages": "Services",
+                "nav_packages": "Our Services",
                 "nav_founder": "About Us",
                 "nav_contact": "Let's Talk",
                 "hero_title_l1": "Your Path to the",
@@ -469,11 +464,23 @@
                 "packages_subtitle2": "Monthly Growth Partnership",
                 "pkg5_title": "Full Management", "pkg5_price_syp": "450,000 SYP", "pkg5_price_usd": "($45 USD) / month",
                 "pkg5_l1": "✓ 1 Photoshoot every 2 weeks", "pkg5_l2": "✓ 1 Short Video every 5 days", "pkg5_l3": "✓ 1 Social Media Post every 3 days", "pkg5_l4": "✓ 16 Comments & Replies per month",
-                "about_title": "The Team Behind the Brand",
-                "about_p1": "Behind Matini Media is its founder, Musa Matini. He established the agency with a clear vision: to build a small, agile team of young creatives dedicated to bringing modern digital strategies to local Syrian businesses.",
-                "about_p2": "We are a new generation of digital natives. Our youth is our advantage—it gives us an intuitive understanding of what works on the internet *now*, not what worked five years ago. We move fast, adapt quickly, and build solutions that are fresh and effective.",
-                "about_p3": "Our approach is a true partnership. We bring our collective expertise in design, code, and social media. Together, we build a powerful online presence that drives real growth.",
-                "about_personal_link": "See the founder's work →",
+                
+                "about_tag": "Our Team",
+                "about_title": "Meet the Team & Our Partners",
+                "founder_name": "Musa Matini",
+                "founder_title": "Founder & Software Developer",
+                "founder_desc": "I’m Musa Matini, a young and passionate software developer, and the founder of Matini Media Agency.",
+                "founder_link": "Visit my personal site →",
+                "partner_name": "Etherlight",
+                "partner_title": "Hosting & Consulting Partner",
+                "partner_desc": "Our trusted partner for high-performance hosting, providing us with fast, secure, and reliable systems.",
+                "partner_link": "Visit Etherlight’s website →",
+                "designer_name": "Ibrahim Matini",
+                "designer_title": "Graphic Designer",
+                "designer_desc": "Our graphics designer. He creates eye-catching designs. by the way he is the creative mind behind our agency’s logo.",
+                "designer_link": "Visit his personal site →",
+
+                
                 "contact_title": "Ready to Start?",
                 "contact_subtitle": "Let's talk about your business and how we can help it grow. Send an email or message me directly."
             },
@@ -508,11 +515,22 @@
                 "packages_subtitle2": "شراكة نمو شهرية",
                 "pkg5_title": "إدارة متكاملة", "pkg5_price_syp": "450,000 ل.س", "pkg5_price_usd": "(45 دولارًا) / شهريًا",
                 "pkg5_l1": "✓ جلسة تصوير كل أسبوعين", "pkg5_l2": "✓ فيديو قصير كل 5 أيام", "pkg5_l3": "✓ منشور كل 3 أيام", "pkg5_l4": "✓ 16 ردًا وتعليقًا شهريًا",
-                "about_title": "الفريق خلف العلامة التجارية",
-                "about_p1": "خلف وكالة متيني يقف مؤسسها، موسى متيني. أسس الوكالة برؤية واضحة: بناء فريق صغير ومرن من المبدعين الشباب، مكرس لتقديم استراتيجيات رقمية حديثة للشركات المحلية في سوريا.",
-                "about_p2": "نحن جيل جديد نشأ في قلب العالم الرقمي. شبابنا هو ميزتنا، فهو يمنحنا فهمًا فطريًا لما ينجح على الإنترنت *الآن*، وليس ما كان ناجحًا قبل خمس سنوات. نتحرك بسرعة، نتكيف بمرونة، ونبني حلولًا مبتكرة وفعالة.",
-                "about_p3": "نهجنا هو شراكة حقيقية. نقدم خبرتنا الجماعية في التصميم والبرمجة والتواصل الاجتماعي. معًا، نبني حضورًا رقميًا قويًا يحقق نموًا حقيقيًا.",
-                "about_personal_link": "شاهد أعمال المؤسس ←",
+                
+                "about_tag": "فريق العمل",
+                "about_title": "تعرف على الفريق وشركائنا",
+                "founder_name": "موسى متيني",
+                "founder_title": "المؤسس ومطور البرمجيات",
+                "founder_desc": "أنا موسى متيني، مطور برمجيات شاب, شغوف. مؤسس وكالة متيني ميديا.",
+                "founder_link": "زيارة موقعي الشخصي ←",
+                "partner_name": "إيثرلايت",
+                "partner_title": "شريك الاستضافة والاستشارات",
+                "partner_desc": "شريكنا الموثوق لاستضافة عالية الأداء. يوفر لنا أنظمة سريعة, آمنة وموثوقة.",
+                "partner_link": "زيارة موقع إيثرلايت ←",
+                "designer_name": "إبراهيم متيني",
+                "designer_title": "مصمم جرافيك",
+                "designer_desc": " المسؤول عن ابتكار التصاميم الجذابة. أيضاً هو العقل المبدع الذي صمم شعار وكالتنا.",
+                "designer_link": "زيارة موقعه الشخصي ←",
+                
                 "contact_title": "هل أنت جاهز للبدء؟",
                 "contact_subtitle": "دعنا نتحدث عن نشاطك التجاري وكيف يمكننا مساعدته على النمو. أرسل بريدًا إلكترونيًا أو تواصل معي مباشرة."
             }
@@ -626,13 +644,6 @@
                 }
             });
         });
-
-        VANTA.FOG({
-            el: "#vanta-bg", mouseControls: false, touchControls: false, gyroControls: false,
-            minHeight: 200.00, minWidth: 200.00, highlightColor: 0x2a2a2a, midtoneColor: 0x1e1e1e,
-            lowlightColor: 0x3c3c3c, baseColor: 0x0, blurFactor: 0.50, speed: 0.50, zoom: 0.40
-        });
-
     });
     </script>
 </body>
