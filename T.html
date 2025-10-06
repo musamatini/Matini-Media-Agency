@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة خاصة للغالي توفيق</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Dark Theme Colors */
+            --primary-color: #007bff;
+            --secondary-color: #28a745;
+            --background-color: #121212;
+            --card-background: #1e1e1e;
+            --text-color: #e0e0e0;
+            --light-text-color: #ffffff;
+            --border-color: #444;
+            --shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            text-align: right;
+        }
+
+        /* --- Password Gate --- */
+        #password-gate {
+            display: flex; /* Changed to flex to handle initial state */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+        }
+
+        #password-gate h1 {
+            color: var(--primary-color);
+        }
+
+        #password-gate p {
+            margin: 10px 0;
+            color: #aaa;
+        }
+
+        #password-gate input {
+            padding: 12px;
+            background-color: #2a2a2a;
+            border: 1px solid var(--border-color);
+            color: var(--light-text-color);
+            border-radius: 8px;
+            margin-top: 10px;
+            width: 250px;
+            font-family: 'Tajawal', sans-serif;
+            text-align: center;
+            font-size: 1rem;
+        }
+        #password-gate input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        #password-gate button {
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        #password-gate button:hover {
+            background-color: #0056b3;
+        }
+        
+        #error-message {
+            color: #ff5252;
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+
+        /* --- Main Content --- */
+        #main-content {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #0d47a1, #007bff);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .instructions {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-right: 5px solid var(--secondary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+        
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .subject-card {
+            background-color: var(--card-background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .subject-header {
+            padding: 20px;
+            background-color: #2a2a2a;
+            color: var(--light-text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .subject-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .image-count {
+            background-color: rgba(0, 123, 255, 0.2);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .gallery {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery .no-images {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #888;
+            padding: 30px 0;
+        }
+
+        .image-container {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .download-btn {
+            display: block;
+            padding: 10px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .download-btn:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="password-gate">
+        <h1>صفحة خاصة</h1>
+        <p>الرجاء إدخال كلمة السر للمتابعة</p>
+        <p><strong>تلميح:</strong> اسم المعهد (كلمتين بيناتون فراغ)</p>
+        <input type="password" id="password-input" placeholder="اكتب كلمة السر هون...">
+        <button id="submit-btn">دخول</button>
+        <p id="error-message">كلمة السر غلط يا حبيب، حاول مرة تانية.</p>
+    </div>
+
+    <main id="main-content">
+        <header class="header">
+            <h1>أهلاً وسهلاً بالغالي توفيق!</h1>
+            <p>هي الصفحة عملتلك ياها خصوصي مشانك يا شريك، بتلاقي فيها كل صور اللوح تبع المواد اللي أخدناها. بالتوفيق بالدراسة يا وحش!</p>
+            <p><strong>من رفيقك، موسى متيني</strong></p>
+        </header>
+
+        <section class="instructions">
+            <h3>شوية تعليمات على السريع:</h3>
+            <ul>
+                <li>كل مادة إلها قسم خاص فيها، و مكتوب جنب اسمها عدد الصور الموجودة.</li>
+                <li>بس تكبس على زر "تحميل"، الصورة رح تنزل فوراً على موبايلك.</li>
+                <li><strong>ملاحظة هامة:</strong> بعد ما تحمل الصور، رح تلاقيهن بمجلد التنزيلات (Downloads) عندك بمدير الملفات تبع الموبايل.</li>
+            </ul>
+        </section>
+
+        <div class="subjects-grid">
+            <!-- Subject Cards will be injected here by JavaScript -->
+        </div>
+        
+        <footer class="footer">
+            <p>هي الصفحة معمولة خصوصي إلك يا توفيق</p>
+        </footer>
+    </main>
+
+    <script>
+    // ===================================================================================
+    // ||   يا موسى، هون المكان الوحيد اللي لازم تعدّل عليه لما تضيف صور جديدة   ||
+    // ===================================================================================
+    const subjectsData = {
+        analysis: { name: "رياضيات تحليل", images: [] },
+        algebra: { name: "رياضيات جبر", images: [] },
+        sequences: { name: "رياضيات متتاليات", images: [] },
+        vectors: { name: "رياضيات أشعة", images: [] },
+        physics_e: { name: "فيزياء كهرباء", images: [] },
+        physics_m: { name: "فيزياء ميكانيك", images: [] },
+        chemistry: { name: "كيميا", images: [] },
+        science: { name: "علوم", images: [] },
+        english: { name: "انجليزي", images: [] },
+        french: { name: "فرنسي", images: [] },
+        arabic: { name: "عربي", images: [] }
+    };
+    // ===================================================================================
+    // ||   لا تعدل أي شي تحت هاد السطر لو سمحت :)   ||
+    // ===================================================================================
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const passwordInput = document.getElementById('password-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const passwordGate = document.getElementById('password-gate');
+        const mainContent = document.getElementById('main-content');
+        const errorMessage = document.getElementById('error-message');
+        
+        const correctPassword = "صناع التفوق";
+        const authKey = 'isTawfikAuthenticated';
+
+        const showMainContent = () => {
+            passwordGate.style.display = 'none';
+            mainContent.style.display = 'block';
+            renderContent();
+        }
+
+        // ADDED: Check if user is already logged in from a previous session
+        if (localStorage.getItem(authKey) === 'true') {
+            showMainContent();
+        }
+
+        const checkPassword = () => {
+            if (passwordInput.value === correctPassword) {
+                // ADDED: Save login state to localStorage so he doesn't have to login again
+                localStorage.setItem(authKey, 'true');
+                showMainContent();
+            } else {
+                errorMessage.style.display = 'block';
+                passwordInput.style.border = '2px solid #ff5252';
+            }
+        };
+        
+        submitBtn.addEventListener('click', checkPassword);
+        
+        passwordInput.addEventListener('keydown', (event) => {
+            if (event.key === "Enter") {
+                checkPassword();
+            }
+        });
+
+        function renderContent() {
+            const subjectsGrid = document.querySelector('.subjects-grid');
+            if(subjectsGrid.childElementCount > 0) return; // Don't render twice
+
+            for (const subjectKey in subjectsData) {
+                const subject = subjectsData[subjectKey];
+                const imageCount = subject.images.length;
+                const card = document.createElement('div');
+                card.className = 'subject-card';
+                card.innerHTML = `
+                    <div class="subject-header">
+                        <h2>${subject.name}</h2>
+                        <span class="image-count">${imageCount} صور</span>
+                    </div>
+                `;
+
+                const gallery = document.createElement('div');
+                gallery.className = 'gallery';
+                if (imageCount === 0) {
+                    gallery.innerHTML = '<p class="no-images">لسه مافي صور لهي المادة.</p>';
+                } else {
+                    const sortedImages = [...subject.images].sort().reverse();
+                    sortedImages.forEach(imageName => {
+                        const imagePath = `images/${subjectKey}/${imageName}`;
+                        const imageContainer = document.createElement('div');
+                        imageContainer.className = 'image-container';
+                        imageContainer.innerHTML = `
+                            <img src="${imagePath}" alt="صورة من مادة ${subject.name}" loading="lazy">
+                            <a href="${imagePath}" download class="download-btn">تحميل</a>
+                        `;
+                        gallery.appendChild(imageContainer);
+                    });
+                }
+                card.appendChild(gallery);
+                subjectsGrid.appendChild(card);
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>
